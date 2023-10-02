@@ -48,22 +48,20 @@ module.exports.SignUpPage=async function(req,res){
 }
 
 
-//destroing the session
-module.exports.destroySession = function(req, res) {
-    try {
-      // Logout the user and redirect to the homepage
-      req.logout(function(err) {
-        if (err) {
-          console.log("Error in destroying the session", err);
-          return;
-        }
-        return res.redirect('/');
-      });
-    } catch (err) {
-      console.log("Error in destroying the session", err);
-      return;
+//sign out and destroying the sesssion
+module.exports.destroySession=async function(req,res){
+    try{
+        req.logout(function(err) {
+            if (err) { return console.log(err); }
+            console.log("Signed out")
+            return res.redirect('/auth/login');
+          });
+        
+    }catch(err){
+        return;
     }
-  };
+    }
+
 
 
   //rendering the profilepage
