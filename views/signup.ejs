@@ -1,9 +1,22 @@
-<h1>Signup page</h1>
-
-<form action="/auth/create" method="POST">
-    <input placeholder="Example@email.com" required type="email" name="email">
-    <input placeholder="password" required type="password" name="password">
-    <input placeholder="password" required type="password" name="conformPassword">
-    <input placeholder="Name" required type="text" name="name">
-    <button>Sign Up</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="/css/signup.css">
+</head>
+<body>
+    <div class="signup-container">
+        <h1>Sign Up</h1>
+        <form action="/auth/create" method="POST" class="signup-form">
+            <input type="email" placeholder="Example@email.com" required name="email" class="input-field">
+            <input type="password" placeholder="Password" required name="password" class="input-field">
+            <input type="password" placeholder="Confirm Password" required name="confirmPassword" class="input-field">
+            <input type="text" placeholder="Name" required name="name" class="input-field">
+            <button type="submit" class="signup-button">Sign Up</button>
+        </form>
+        <a href="/auth/login" class="login-link">Already have an account? Log In</a>
+    </div>
+</body>
+</html>

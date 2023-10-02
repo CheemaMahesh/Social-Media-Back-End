@@ -1,4 +1,23 @@
-<h1>This is home page brouuuuuuuuuuuuuuuuuuuuuuuu</h1>
-<a href="/auth/destroy">
-    <button>SignOut</button>
-</a>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/home.css">
+    <title>Home</title>
+</head>
+<body>
+    <div class="container">
+        <h1>This is the home page</h1>
+        <% if (locals.user) { %>
+            <form action="/posts/create" method="POST">
+                <textarea placeholder="Write something new" name="posttext"></textarea>
+                <input type="text" placeholder="URL" name="url">
+                <input type="hidden" value="<%= user._id %>" name="user">
+                <button>Create</button>
+            </form>
+            <a href="/auth/destroy">
+                <button>Sign Out</button>
+            </a>
+        <% } %>
+    </div>
+</body>
+</html>

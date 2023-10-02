@@ -30,6 +30,9 @@ module.exports.createUser=async function (req,res){
 //rendering the signin page
 module.exports.LoginPage=async function(req,res){
     try{
+        if(req.isAuthenticated()){
+            return redirect('/')
+          }
         return res.render('login');
     }catch(err){
         console.log("error in rendering the login page",err);
@@ -40,6 +43,9 @@ module.exports.LoginPage=async function(req,res){
 //rendering the signup page
 module.exports.SignUpPage=async function(req,res){
     try{
+        if(req.isAuthenticated()){
+            return redirect('/')
+          }
         return res.render('signup');
     }catch(err){
         console.log('error in rendering the singup page',err);

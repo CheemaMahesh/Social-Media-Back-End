@@ -1,6 +1,20 @@
-<h1>Login page</h1>
-<form action="/auth/create-session" method="POST">
-    <input placeholder="Example@email.com" required name="email">
-    <input placeholder="password" required name="password">
-    <button>Login</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form action="/auth/create-session" method="POST" class="login-form">
+            <input type="email" placeholder="Example@email.com" required name="email" class="input-field">
+            <input type="password" placeholder="Password" required name="password" class="input-field">
+            <button type="submit" class="login-button">Login</button>
+        </form>
+        <a href="/auth/signup" class="signup-link">Don't have an account? Sign Up</a>
+    </div>
+</body>
+</html>
